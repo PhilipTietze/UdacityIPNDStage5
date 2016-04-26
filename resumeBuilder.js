@@ -110,7 +110,7 @@ education.onlinecourses.display=function() {
 
 for (i=0; i<education.onlineCourses.length; i++) {
 
-		//$("#education").append(HTMLonlineCourses);
+		$("#education").append(HTMLonlineCourses);
 		var formattedName=HTMLonlineTitle.replace("%data%", education.onlineCourses[i].name);
 		var formattedSchool=HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 		var formattedDates=HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
