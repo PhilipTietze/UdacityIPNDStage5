@@ -87,43 +87,41 @@ var education={
 	]
 };
 
-schools.display=function() {
+education.schools.display=function() {
 
 	for (i=0; i<education.schools.length; i++) {
 
 		$("#education").append(HTMLschoolStart);
-		var formattedName=HTMLschoolName.replace("%data%", education.schools.name);
-		var formattedDegree=HTMLschoolDegree.replace("%data%", education.schools.degree);
-		var formattedDates=HTMLschoolDates.replace("%data%", education.schools.dates);
-		var formattedLocation=HTMLschoolLocation.replace("%data%", education.schools.city);
-		var formattedMajor=HTMLschoolMajor.replace("%data%", education.schools.major);
+		var formattedName=HTMLschoolName.replace("%data%", education.schools[i].name);
+		var formattedDegree=HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+		var formattedDates=HTMLschoolDates.replace("%data%", education.schools[i].dates);
+		var formattedLocation=HTMLschoolLocation.replace("%data%", education.schools[i].city);
+		var formattedMajor=HTMLschoolMajor.replace("%data%", education.schools[i].major);
 		var schoolAttributes=formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
 		$("#education").append(schoolAttributes);
 	}
+
+	
 };
 
-schools.display();
+education.schools.display();
 
-onlineCourses.display=function() {
+education.onlinecourses.display=function() {
 
-	for (i=0; i<education.onlineCourses.length; i++) {
+for (i=0; i<education.onlineCourses.length; i++) {
 
-		$("#education").append(HTMLonlineCourses);
-		var formattedName=HTMLonlineTitle.replace("%data%", education.onlineCourses.name);
-		var formattedSchool=HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
-		var formattedDates=HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
-		var formattedURL=HTMLonlineURL.replace("%data%", education.onlineCourses.website);
+		//$("#education").append(HTMLonlineCourses);
+		var formattedName=HTMLonlineTitle.replace("%data%", education.onlineCourses[i].name);
+		var formattedSchool=HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+		var formattedDates=HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+		var formattedURL=HTMLonlineURL.replace("%data%", education.onlineCourses[i].website);
 		var onlineCoursesAttributes=formattedName + formattedSchool + formattedDates + formattedURL;
-		$("#education").append(onlineCourseAttributes);
-
-
+		$("#education").append(onlineCoursesAttributes);
 
 	}
 };
 
-onlineCourses.display();
-
-
+education.onlineCourses.display();
 
 var work={
 
@@ -184,7 +182,7 @@ var work={
 			"location": "Morgantown, West Virginia",
 			"description": "Teach studio violin and viola, string pedagogy and aural theory.  Director of chamber orchestra"
 		}
-	],
+	]
 };
 
 function displayWork() {
