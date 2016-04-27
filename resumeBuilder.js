@@ -246,17 +246,15 @@ projects.display=function() {
 			var formattedDates=HTMLprojectDates.replace("%data%", projects.project[i].dates);
 			var formattedDescription=HTMLprojectDescription.replace("%data%", projects.project[i].description);
 			if (projects.project[i].images.length>0) {
-				
-				var formattedImages;
 				for (image=0; image<projects.project[i].images.length; image++) {
-					var formattedImage=HTMLprojectImages.replace("%data%", projects.project[i].images[image]);
-					if (image >=1) {
-                    	formattedImages +=  formattedImage;
-                		}
-
+				    if (image == 0) {
+					var formattedImages=HTMLprojectImages.replace("%data%", projects.project[i].images[image]);
+					} else{
+					    var formattedImage=HTMLprojectImages.replace("%data%", projects.project[i].images[image]);
+					    formattedImages += formattedImage;
+					}
 				}	
 			}
-
         
 
 		var projectAttributes=formattedTitle + formattedDates + formattedDescription + formattedImages;
@@ -268,6 +266,7 @@ projects.display=function() {
 
 projects.display();
 
+$("map-div").append(googleMap);
 
 
 
