@@ -58,7 +58,7 @@ var education={
 		
 		{
 			"name": "Indiana University",
-			"city": "Bloomington, Indiana",
+			"location": "Bloomington, Indiana",
 			"degree": "Bachelor of Music",
 			"major": "Viola performance",
 			"dates": "1975-1980, summer 1990",
@@ -67,7 +67,7 @@ var education={
 
 		{
 			"name": "University of Southern California",
-			"city": "Los Angeles, California",
+			"location": "Los Angeles, California",
 			"degree": "Master of Music, Pi Kappa Lambda",
 			"major": "Viola performance",
 			"dates": "1994-1996",
@@ -95,7 +95,7 @@ education.schools.display=function() {
 		var formattedName=HTMLschoolName.replace("%data%", education.schools[i].name);
 		var formattedDegree=HTMLschoolDegree.replace("%data%", education.schools[i].degree);
 		var formattedDates=HTMLschoolDates.replace("%data%", education.schools[i].dates);
-		var formattedLocation=HTMLschoolLocation.replace("%data%", education.schools[i].city);
+		var formattedLocation=HTMLschoolLocation.replace("%data%", education.schools[i].location);
 		var formattedMajor=HTMLschoolMajor.replace("%data%", education.schools[i].major);
 		var schoolAttributes=formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
 		$("#education").append(schoolAttributes);
@@ -266,8 +266,7 @@ projects.display=function() {
 
 projects.display();
 
-$("map-div").append(googleMap);
-
+$("#mapDiv").append(googleMap);
 
 
 
