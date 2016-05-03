@@ -25,31 +25,36 @@
 					
 
 };
-var formattedName=HTMLheaderName.replace("%data%", bio.name);
-var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
-var formattedAddress=HTMLcontactGeneric.replace("%data%", bio.contacts.address);
-var formattedMobilePhone=HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
-var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedPicture=HTMLbioPic.replace("%data%", bio.picture);
-var formattedWelcomeMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+bio.display=function() {
+	var formattedName=HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
+	var formattedAddress=HTMLcontactGeneric.replace("%data%", bio.contacts.address);
+	var formattedMobilePhone=HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
+	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
+	var formattedPicture=HTMLbioPic.replace("%data%", bio.picture);
+	var formattedWelcomeMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedAddress);
-$("#header").append(formattedMobilePhone);
-$("#header").append(formattedEmail);
-$("#header").append(formattedLocation);
-$("#header").append(formattedPicture);
-$("#header").append(formattedWelcomeMessage);
+	$("#header").prepend(formattedRole);
+	$("#header").prepend(formattedName);
+	$("#header").append(formattedAddress);
+	$("#header").append(formattedMobilePhone);
+	$("#header").append(formattedEmail);
+	$("#header").append(formattedLocation);
+	$("#header").append(formattedPicture);
+	$("#header").append(formattedWelcomeMessage);
 
-$("#header").append(HTMLskillsStart);
-for (i=0; i<bio.skills.length; i++) {
-	var formattedSkills=HTMLskills.replace("%data%", bio.skills[i]);
-	$("#skills:last").append(formattedSkills);
+	$("#header").append(HTMLskillsStart);
+	for (i=0; i<bio.skills.length; i++) {
+		var formattedSkills=HTMLskills.replace("%data%", bio.skills[i]);
+		$("#skills:last").append(formattedSkills);
 
-}
+	}
+};
+
+bio.display();
 
 
 var education={
@@ -185,7 +190,7 @@ var work={
 	]
 };
 
-function displayWork() {
+work.display=function() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer=HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -199,7 +204,7 @@ function displayWork() {
 
 	}
 };	
-displayWork();
+work.display();
 
 var projects={
 
@@ -267,6 +272,28 @@ projects.display=function() {
 projects.display();
 
 $("#mapDiv").append(googleMap);
+
+$("#main").append(internationalizeButton);
+
+
+var oldName=bio.name;
+function inName(oldName) {
+    var finalName = oldName;
+    var space=oldName.indexOf(' ');//determine location of space between first and last names
+    var beginningFirstName=oldName[0];//first letter of first name
+    var remainderFirstName=oldName.slice(1, space).toLowerCase(); //remainder of first name
+    var firstName=beginningFirstName + remainderFirstName;
+    var lastName=oldName.slice(space+1).toUpperCase();
+    var finalName=firstName + '  ' + lastName
+
+    
+    
+    // Don't delete this line!
+    return finalName;
+
+  };
+
+  inName(oldName);
 
 
 
