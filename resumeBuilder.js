@@ -17,6 +17,7 @@
 				"address": "6123 Dell Drive, Madison, Wisconsin 53718",
 				"mobile" :"765-749-1973",
 				"email": "Philip_Tietze@gmx.com",
+				"github": "file:///Users/caroljenkinsphiliptietze/Downloads/frontend-nanodegree-resume-master/js/PhilipTietze:UdacityIPNDStage5.webarchive",
 				"location": "Madison"
 				},	
 				"skills": ["Front End Programming", "Python", "Javascript", "HTML", "CSS", "SQL"],
@@ -32,6 +33,7 @@ bio.display=function() {
 	var formattedAddress=HTMLcontactGeneric.replace("%data%", bio.contacts.address);
 	var formattedMobilePhone=HTMLmobile.replace("%data%", bio.contacts.mobile);
 	var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
+	var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
 	var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
 	var formattedPicture=HTMLbioPic.replace("%data%", bio.picture);
 	var formattedWelcomeMessage=HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -43,6 +45,7 @@ bio.display=function() {
 	$("#header").append(formattedMobilePhone);
 	$("#header").append(formattedEmail);
 	$("#header").append(formattedLocation);
+	$("#header").append(formattedGithub);
 	$("#header").append(formattedPicture);
 	$("#header").append(formattedWelcomeMessage);
 
@@ -67,7 +70,7 @@ var education={
 			"degree": "Bachelor of Music",
 			"major": "Viola performance",
 			"dates": "1975-1980, summer 1990",
-			"website": "www.indiana.edu"
+			"url": "www.indiana.edu"
 		},
 
 		{
@@ -76,7 +79,7 @@ var education={
 			"degree": "Master of Music, Pi Kappa Lambda",
 			"major": "Viola performance",
 			"dates": "1994-1996",
-			"website": "www.usc.edu"
+			"url": "www.usc.edu"
 		}
 
 	],
@@ -87,7 +90,7 @@ var education={
 			"name": "Introduction to Programming Nanodegree",
 			"school": "Udacity",
 			"dates": "May 2015-present",
-			"website": "www.udacity.com"
+			"url": "www.udacity.com"
 		}
 	]
 };
@@ -102,7 +105,8 @@ education.schools.display=function() {
 		var formattedDates=HTMLschoolDates.replace("%data%", education.schools[i].dates);
 		var formattedLocation=HTMLschoolLocation.replace("%data%", education.schools[i].location);
 		var formattedMajor=HTMLschoolMajor.replace("%data%", education.schools[i].major);
-		var schoolAttributes=formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+		var formattedURL=HTMLschoolURL.replace("%data%", education.schools[i].url);
+		var schoolAttributes=formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor +formattedURL;
 		$("#education").append(schoolAttributes);
 	}
 
@@ -119,7 +123,7 @@ for (i=0; i<education.onlineCourses.length; i++) {
 		var formattedName=HTMLonlineTitle.replace("%data%", education.onlineCourses[i].name);
 		var formattedSchool=HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 		var formattedDates=HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-		var formattedURL=HTMLonlineURL.replace("%data%", education.onlineCourses[i].website);
+		var formattedURL=HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 		var onlineCoursesAttributes=formattedName + formattedSchool + formattedDates + formattedURL;
 		$("#education").append(onlineCoursesAttributes);
 
