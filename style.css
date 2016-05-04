@@ -12,6 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  
 }
 
 .clear-fix {
@@ -34,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: blue;
   line-height: 29px;
   padding: 10px;
 }
@@ -59,6 +60,14 @@ h4,
 h5 {
   padding:10px 5%;
 
+}
+
+
+h2 {
+  background-color: orange;
+  text-align: center;
+  
+  
 }
 
 
@@ -97,12 +106,21 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+
 }
 
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 210px;
+  margin-right: 500px;
+  margin-right: 660px;
+
 }
+
+
 
 .orange {
   background-color: #f5ae23;
@@ -154,6 +172,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+
 }
 
 img {
